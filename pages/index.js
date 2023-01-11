@@ -1,3 +1,5 @@
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import Head from "next/head";
 import Image from "next/image";
 import themeImg from "../public/static/skerries-windmill.jpg";
@@ -6,6 +8,26 @@ import { Inter } from "@next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    try {
+      axios
+        .get(
+          "https://api.irishrail.ie/realtime/realtime.asmx/getStationDataByNameXML?StationDesc=Skerries",
+          {
+            "Content-Type": "application/xml; charset=utf-8",
+          }
+        )
+        .then((results) => {
+          console.log(results);
+          setData(results);
+        });
+    } catch (err) {
+      console.log(err);
+    }
+  }, []);
+
   return (
     <>
       <Head>
@@ -62,7 +84,7 @@ export default function Home() {
                 turpis, luctus ac urna vitae, efficitur bibendum ante
               </p>
             </div>
-            <div className="lg:w-2/3">
+            <div className="w-full lg:w-2/3">
               <h2 className="text-slate-100 text-4xl pb-3">What's On</h2>
               <div className="lg:grid lg:grid-cols-4 lg:grid-rows-6 gap-2">
                 <div className="flex justify-between bg-white drop-shadow-md col-span-2 mb-2 lg:mb-0 rounded-md py-2 px-3">

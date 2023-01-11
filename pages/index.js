@@ -66,7 +66,7 @@ export default function Home() {
                 <div>
                   <div className="text-base text-black pb-4">Mad Session</div>
                   <div className="text-sm text-slate-500">
-                    Jack Dinan's Gaff
+                    <p>Jack Dinan's Gaff</p>
                   </div>
                 </div>
                 <div>
@@ -82,7 +82,7 @@ export default function Home() {
                 <div>
                   <div className="text-base text-black pb-4">Mad Session</div>
                   <div className="text-sm text-slate-500">
-                    Jack Dinan's Gaff
+                    <p>Jack Dinan's Gaff</p>
                   </div>
                 </div>
                 <div>
@@ -98,7 +98,7 @@ export default function Home() {
                 <div>
                   <div className="text-base text-black pb-4">Mad Session</div>
                   <div className="text-sm text-slate-500">
-                    Jack Dinan's Gaff
+                    <p>Jack Dinan's Gaff</p>
                   </div>
                 </div>
                 <div>
@@ -114,7 +114,7 @@ export default function Home() {
                 <div>
                   <div className="text-base text-black pb-4">Mad Session</div>
                   <div className="text-sm text-slate-500">
-                    Jack Dinan's Gaff
+                    <p>Jack Dinan's Gaff</p>
                   </div>
                 </div>
                 <div>
@@ -130,7 +130,7 @@ export default function Home() {
                 <div>
                   <div className="text-base text-black pb-4">Mad Session</div>
                   <div className="text-sm text-slate-500">
-                    Jack Dinan's Gaff
+                    <p>Jack Dinan's Gaff</p>
                   </div>
                 </div>
                 <div>
@@ -172,8 +172,9 @@ export default function Home() {
         </div>
       </div>
       <div>
-        Judge Dredd <br />
-        Judge Dredd's Head
+        John the baby
+        <br />
+        John Doe
       </div>
     </>
   );

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import Head from "next/head";
 import Image from "next/image";
 import themeImg from "../public/static/skerries-windmill.jpg";
@@ -11,21 +10,16 @@ export default function Home() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    try {
-      axios
-        .get(
-          "https://api.irishrail.ie/realtime/realtime.asmx/getStationDataByNameXML?StationDesc=Skerries",
-          {
-            "Content-Type": "application/xml; charset=utf-8",
-          }
-        )
-        .then((results) => {
-          console.log(results);
-          setData(results);
-        });
-    } catch (err) {
-      console.log(err);
-    }
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/api/skeztrains");
+        const data = await response.json();
+        console.log(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchData();
   }, []);
 
   return (
